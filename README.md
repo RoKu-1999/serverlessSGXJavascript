@@ -30,7 +30,14 @@ Web-Apps:
 Improvements?
 
 - Can Non-Web Javascript Engines achieve any benefit in Latency and/or scalability by being excecuted in an enclave?
-- 
+
+Examples:
+- Cron Jobs
+- HTTP Endpoints
+- File Replicator
+- Websocket Authorizers
+- Chatbots
+- Data processing pipelines
 
 Survey of Serverless in the fog [8]:
 
@@ -78,7 +85,9 @@ Serverless Java:
 	- Some areas only utilize Java Applications => Should all applications be rewritten? Example fininacial sector!
 	- GraalVM can produce JavaBytecode that can be utilized as a function in a faas
 		- Decreases memory usage and cold start time as not that much memory is allocated
-	- 
+- Applications:
+	- Simple HTTP Endpoint example (AWS)
+	- serverless + java DynamoDB	 	
 
 
 
