@@ -115,5 +115,7 @@ Resources:
 
 [10] Diggi: A Secure Framework for Hosting Native Cloud Functions with Minimal Trust: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9014360
 
+[11] Application: https://www.serverless.com/examples?prod_EXAMPLES_SEARCH_GROWTH%5BrefinementList%5D%5Blanguage%5D%5B0%5D=java
+
 
 
