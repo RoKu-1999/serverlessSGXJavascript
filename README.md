@@ -4,9 +4,9 @@ Javascript main benefits: Offloading computations to client
 
 => Disadvantage: Client-Side input not trustworthy
 
-	- always validated at Server
-	- many resources are wasted
-	- computations must be public
+- always validated at Server
+- many resources are wasted
+- computations must be public
 
 Non-Web: SGX Resource Measurement with S-FaaS
 
@@ -24,13 +24,42 @@ Non-Web: SGX Resource Measurement with S-FaaS
 
 Web-Apps:
 
-	- Benefit in Latency regarding higher amount of computations
-	- Benefit in Scalalbility as Server can handle more clients
+- Benefit in Latency regarding higher amount of computations
+- Benefit in Scalalbility as Server can handle more clients
 
 Improvements?
 
-	- Can Non-Web Javascript Engines achieve any benefit in Latency and/or scalability by being excecuted in an enclave?
-	- 
+- Can Non-Web Javascript Engines achieve any benefit in Latency and/or scalability by being excecuted in an enclave?
+- 
+
+Survey of Serverless in the fog [8]:
+
+- Faas platforms are:
+	- AWS Lambda (Amazon)
+	- Azure functions (Microsoft)
+	- Cload functions (google)
+	- Apache OpenWhisk (open source)
+- Chapter 6: secure FAAS approaches with Intel SGX
+	- 1) Clemmys [9], shielded execution framework on top of Intel SGX, based on OpenWhisk
+	- 1) Implements encryption with key management system
+	- 1) Can execute Javascript/python
+	- 2) S-FaaS [2], based on OpenWhisk, works with Key Distribution Enclave for Workers
+	- 2) computes/estimates resources correctly
+	- 3) Brenner and Kapitza [3] propose secure FaaS architecture based on Javascript isolation capabilities
+	- 3) Using javascript enables to bundle libraries, store interpreter in enclave and reuse runtime contexts
+	- 3) Uses SecureDuk or Google Secure V8, functions are loaded from external storage and attested via Intel SGX
+	- 4) Diggi [10] execute secure distributed functions, running trusted and untrusted process shared by the functions
+	- 5) SE-Lambda working with sandboxes
+	- More secure approaches with information flow, etc. not utilising Intel SGX
+	- What security aspects are realized by whom?
+		- Data Confidentiality: 1, 2, 3, 4
+		- Data integrity: 1, 2, 3, 4
+		- Function Integrity: 1, 3, 4
+		- Billing: 2
+
+Question: 
+	- Can function integrity and the billing mechanisms be combined?
+
 
 Serverless Java:
 
@@ -71,5 +100,11 @@ Resources:
 
 [7] Java & Graal VM: https://medium.com/criciumadev/serverless-native-java-functions-using-graalvm-and-fn-project-c9b10a4a4859
 
-[7] Serverless in the Fog, a survey: https://link.springer.com/content/pdf/10.1007/s00607-021-00924-y.pdf
+[8] Serverless in the Fog, a survey: https://link.springer.com/content/pdf/10.1007/s00607-021-00924-y.pdf
+
+[9] Clemmys: Towards Secure Remote Execution in FaaS: https://dl.acm.org/doi/pdf/10.1145/3319647.3325835
+
+[10] Diggi: A Secure Framework for Hosting Native Cloud Functions with Minimal Trust: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9014360
+
+
 
